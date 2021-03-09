@@ -11,18 +11,49 @@
 <body>
     <header>
         <a href="../index.html"><img src="../image/valuk kids logo.png" alt="logo nombre"></a>
-        <nav class="menuHeader">
-            <ul>
-                <li><a href="ropanenes.html">Ropa Bebes</a></li>
-                <li><a href="ropanenes.html">Ropa Nenes</a></li>
-                <li><a href="ropanenas.html">Ropa Nenas</a></li>
-                <li><a href="contacto.html">Contacto</a></li>
-            </ul>
+        <nav class="navbar navbar-expand-lg navbar-light">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="menuHeader collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav">            
+                    <a href="ropabebes.html">Ropa Bebes</a></li>
+                    <a href="ropanenes.html">Ropa Nenes</a></li>
+                    <a href="ropanenas.html">Ropa Nenas</a></li>
+                    <a href="contacto.html">Contacto</a></li>
+                </div>
+            </div>
         </nav>
     </header>
     <main>
-        <form class="artForm" action="">
-            <div class="container">
+        <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-indicators">
+              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+              <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            </div>
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <img src="../image/buzo03.jpeg" class="d-block w-100" alt="...">
+              </div>
+              <div class="carousel-item">
+                <img src="../image/pantalon04.jpeg" class="d-block w-100" alt="...">
+              </div>
+              <div class="carousel-item">
+                <img src="../image/valuk kids logo 2.png" class="d-block w-100" alt="...">
+              </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"  data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"  data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+        <form class="artForm col-12" action="">
+            <div class="container row col-12">
             
                 <div class="artContainer">
                     <div class="artTitulo">
