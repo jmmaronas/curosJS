@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/bootstrap.min.css">
+    <link rel="stylesheet" href="../css/style.css">
+    <title>Contacto</title>
+</head>
+<body>
+    <header>
+        <a href="../index.html"><img src="../image/valuk kids logo.png" alt="logo nombre"></a>
+        <nav class="menuHeader">
+            <ul>
+                <li><a href="../pages/ropabebes.html">Ropa Bebes</a></li>
+                <li><a href="../pages/ropanenes.html">Ropa Nenes</a></li>
+                <li><a href="../pages/ropanenas.html">Ropa Nenas</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main class="col-lg-8 col-md-8 col-sm-12 col-12 boxMainForm">
+        <form action="../scrips/correo.php" method="POST" name="Formulario Consulta">
+            <fieldset>
+                <legend class="encabezado">Fomulario</legend>
+                    <div class="form-group">                
+                        <label for="nombre">Nombres:</label>
+                        <input class="form-control input" type="text" value="" name="nombre" placeholder="Juan..." id="nombre">
+                    </div>
+                    <div class="form-group">
+                        <label for="apellido">Apellidos:</label>
+                        <input class="form-control input" type="text" name="apellido" placeholder="Matinez.." id="apellido">
+                    </div>
+                    <div class="form-group">
+                        <label for="f_nacimiento">Fecha de naciemiento:</label>
+                        <input class="form-control input" type="date" name="f_nacimineto" id="f_nacimiento">
+                    </div>   
+                    <div class="form-group">
+                        <label for="email">Email:</label>
+                        <input class="form-control input" type="email" name="email" placeholder="tu_mail@algo.com" id="email">
+                    </div>
+                    <div class="form-group">
+                        <label for="telefono">Telefono:</label>
+                        <input class="form-control input" type="number" name="telefono" placeholder="011-132465.." id="telefono">
+                    </div>
+                    <div class="form-group">
+                        <label for="horario">Horario para contactarnos:</label>
+                        <select class="form-control input" name="horario" id="horario">
+                            <option value="0">8:00-12:00</option>
+                            <option value="1">12:00-16:00</option>
+                            <option value="2">16:00-20:00</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-check-label" for="consulta">Consulta:</label>
+                        <textarea class="input" name="consulta" placeholder="Dejanos tu consulta...." id="consulta"></textarea>                 
+                    </div>
+                    <div class="form-group form-check checkbox row">
+                        <input type="checkbox" name="publicidad" value="recetas" id="publicidad">
+                        <label class="form-check-label" for="publicidad">Deseo recibir recetas mensualmente</label>
+                    </div>  
+                    <div class="form-group form-check checkbox row justify-content-between">  
+                        <input type="checkbox" name="eventos" value="eventos" id="eventos">
+                        <label class="form-check-label" for="eventos">Deseo recibi notificaciones de eventos</label>
+                    </div>    
+                    <input class="btn btn-primary button" type="submit" value="Enviar" name="enviar">
+                    <input class="btn btn-primary button" type="reset" value="Restablecer">
+                </fieldset>
+        </form>
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+    
+</body>
+</html>

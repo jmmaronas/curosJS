@@ -2,26 +2,33 @@ body{
     background-color: rgb(141, 236, 228);
     display: flex;
     flex-direction: column;
-    align-content: center;
-    align-items: center;
+    
 }
-header h1{
+header{
     color: azure;
     text-align: center;
 }
-
-table{
-    border-collapse: collapse;
-    border: solid black 2px; 
-    margin: 20px;
-    color: blue;
+header img{
+    width: auto;
+    height: 10em;
+}
+.menuHeader ul{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    list-style: none;
 }
 
-th, td{
-    border: solid black 1px;
-    text-align: center;
-    padding: 10px;
+.menuHeader ul li a{
+    text-decoration: none;
+    font-size: 2rem;
+    color: aliceblue;
 }
+.menuHeader ul li a:hover{
+    border-bottom: 2px solid aliceblue;
+
+}
+
 .button{
     background-color: blue;
     color: cornsilk;
@@ -35,11 +42,25 @@ th, td{
     border: solid black 2px;
 }
 
-.producto{
-    border: solid 1px black;
+.artForm{
+    width: 100%;
+}
+.container{
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
+    grid-template-columns: repeat(4, 20%);
+    justify-content: space-around;
+    align-items: baseline;
+}
+.artContainer{
+    display: flex;
+    flex-direction: column;
+    color: aliceblue;  
+
+}
+
+.artImage{
+    width: 100%;
+    height: 300px;
 }
 
 
