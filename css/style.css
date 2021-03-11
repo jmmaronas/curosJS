@@ -4,13 +4,12 @@
     
 }
 body{
-    background-color: rgb(99, 111, 119);
+    
     display: flex;
     flex-direction: column;
     
 }
 header{
-    color: azure;
     text-align: center;
 }
 header img{
@@ -28,10 +27,10 @@ header img{
     text-decoration: none;
     margin: 0 10px;
     font-size: 2rem;
-    color: aliceblue;
+    color: rgb(54, 13, 235);
 }
 .menuHeader  a:hover{
-    border-bottom: 2px solid aliceblue;
+    border-bottom: 2px solid rgb(54, 13, 235);
 
 }
 
@@ -40,6 +39,11 @@ header img{
         margin: auto;
         height: 30rem;
 }
+
+.carousel{
+    background-color: rgba(243, 191, 230,0.3);
+}
+
 .container{
     display: flex;
     justify-content: space-around;
@@ -50,25 +54,23 @@ header img{
 .artContainer{
     display: flex;
     flex-direction: column;
-    color: aliceblue;  
     justify-content: center;
     align-content: center;
+    align-items: center;
     margin: 2rem 0;
 }
 
 .artImage{
     /* background-color: rgb(150, 143, 135); */
     border-radius: 10px;
-    width: 18rem;
-    height: 18rem;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 .artImage img{   
     border-radius: 5px; 
-    width: 15rem;
-    height: 15rem;
+    width: 18rem;
+    height: 18rem;
 }
 
 .artPrice strong{
