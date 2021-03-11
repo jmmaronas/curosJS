@@ -48,5 +48,5 @@ class Financiar{
 
 var cliente = 0; //Objeto de la clase Persona
 var pedido = []; //array de objetos de la clase Producto
-var pago = 0; 
+var financiado = 0; //Objeto de la clase Financiar 
 
