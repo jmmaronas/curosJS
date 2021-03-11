@@ -1,4 +1,4 @@
-html{
+*{
     margin: 0;
     padding: 0;
     
@@ -43,6 +43,7 @@ header img{
    
 }
 .container{
+    display: flex;
     justify-content: space-around;
     align-items: baseline;
     align-content: space-around;
@@ -108,3 +109,15 @@ header img{
     justify-content: space-around;
     align-items: initial;
 }
+
+@media only screen and (min-width: 768px) {
+
+}
+
+@media only screen and (max-width: 600px) {
+    .artImage img{
+        width: 8rem;
+        height: auto;
+    }
+}
+
