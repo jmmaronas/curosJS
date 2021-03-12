@@ -8,8 +8,8 @@ class Persona{
 }
 
 class Producto{
-    constructor(tipo, descripcion, precio){
-        this.tipo = tipo;
+    constructor(foto, descripcion, precio){
+        this.foto = foto;
         this.descripcion = descripcion;
         this.precio = precio;
     }

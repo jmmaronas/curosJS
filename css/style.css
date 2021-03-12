@@ -1,7 +1,7 @@
 *{
     margin: 0;
     padding: 0;
-    
+    margin-left: 5px;
 }
 body{
     
@@ -43,6 +43,7 @@ header img{
 .carousel{
     background-color: rgba(243, 191, 230,0.3);
 }
+
 
 .container{
     display: flex;
@@ -116,17 +117,23 @@ header img{
 }
 
 @media only screen and (max-width: 600px) {
+    *{
+        font-size: 85%;
+    }
     .artImage img{
-        width: 8rem;
+        width: 11rem;
         height: auto;
     }
-    .artImage{
+    /* .artImage{
         width: 10rem;
         height: 10rem;
-    }
+    }*/
     .carousel-item img{
         margin: auto;
         height: 10rem;
     }
-}
+    .menuHeader a{
+        font-size: 1rem;
+    }
+} 
 

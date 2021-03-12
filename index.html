@@ -2,6 +2,7 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="js/mi_js.js"></script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
@@ -17,10 +18,10 @@
             </button>
             <div class="menuHeader collapse navbar-collapse" id="navbarNavAltMarkup">
                 <div class="navbar-nav">
-                    <a class="navlink" href="pages/ropabebes.html">Ropa Bebes</a></li>
-                    <a class="navlink" href="pages/ropanenes.html">Ropa Nenes</a></li>
-                    <a class="navlink" href="pages/ropanenas.html">Ropa Nenas</a></li>
-                    <a class="navlink" href="pages/contacto.html">Contacto</a></li>
+                    <a class="navlink" href="pages/ropabebes.html">Ropa Bebes</a>
+                    <a class="navlink" href="pages/ropanenes.html">Ropa Nenes</a>
+                    <a class="navlink" href="pages/ropanenas.html">Ropa Nenas</a>
+                    <a class="navlink" href="pages/contacto.html">Contacto</a>
                 </div>
             </div>
         </nav>
@@ -43,7 +44,6 @@
                 <img src="image/valuk kids logo 2.png" class="d-block w-80" alt="...">
               </div>
             </div>
-        </div>
             <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"  data-bs-slide="prev">
               <span class="carousel-control-prev-icon" aria-hidden="true"></span>
               <span class="visually-hidden">Previous</span>
@@ -53,16 +53,22 @@
               <span class="visually-hidden">Next</span>
             </button>
         </div>
+
+        <button class="button" id="descuentoContado" onclick="aplicarDescuento()"  >Precio contado</button>
+        <button class="button" id="descuentoContado" onclick="agregarProducto()"  >Agregar Producto</button>
+        <div id="agregar">
+
+        </div>
         <div class="row col-12">
             <div class="artContainer col-6 col-md-4 col-lg-3">
                 <div class="artImage">
-                    <img src="../image/ropa/nene/vermuda01.jpeg" alt="vermuda">
+                    <img src="image/ropa/nene/vermuda01.jpeg" alt="vermuda">
                 </div>
                 <div class="artComent">
-                    <p>Descripcion del articulo</p>
+                    <p class="descripcion">Descripcion del articulo</p>
                 </div>
                 <div class="artPrice">
-                    <strong>$<span id="precio">499</span></strong>
+                    <strong>$<span class="precio">499</span></strong>
                 </div>
                 <div class="artSelect">
                     <label for="seleccion">Seleccionar</label>
@@ -73,13 +79,13 @@
             <div class="artContainer col-6 col-md-4 col-lg-3">
                 
                 <div class="artImage">
-                    <img src="../image/ropa/nene/vermuda02.jpeg" alt="vermuda">
+                    <img src="image/ropa/nene/vermuda02.jpeg" alt="vermuda">
                 </div>
                 <div class="artComent">
-                    <p>Descripcion del articulo</p>
+                    <p class="descripcion">Descripcion del articulo</p>
                 </div>
                 <div class="artPrice">
-                    <strong>$<span id="precio">499</span></strong>
+                    <strong>$<span class="precio">499</span></strong>
                 </div>
                 <div class="artSelect">
                     <label for="seleccion">Seleccionar</label>
@@ -89,13 +95,13 @@
 
             <div class="artContainer col-6 col-md-4 col-lg-3">
                 <div class="artImage">
-                    <img src="../image/ropa/nene/remeracorta01.jpeg" alt="remera">
+                    <img src="image/ropa/nene/remeracorta01.jpeg" alt="remera">
                 </div>
                 <div class="artComent">
-                    <p>Descripcion del articulo</p>
+                    <p class="descripcion">Descripcion del articulo</p>
                 </div>
                 <div class="artPrice">
-                    <strong>$<span id="precio">499</span></strong>
+                    <strong>$<span class="precio">499</span></strong>
                 </div>
                 <div class="artSelect">
                     <label for="seleccion">Seleccionar</label>
@@ -105,13 +111,13 @@
 
             <div class="artContainer col-6 col-md-4 col-lg-3">
                 <div class="artImage">
-                    <img src="../image/ropa/nene/remeracorta02.jpeg" alt="remera">
+                    <img src="image/ropa/nene/remeracorta02.jpeg" alt="remera">
                 </div>
                 <div class="artComent">
-                    <p>Descripcion del articulo</p>
+                    <p class="descripcion">Descripcion del articulo</p>
                 </div>
                 <div class="artPrice">
-                    <strong>$<span id="precio">499</span></strong>
+                    <strong>$<span class="precio">499</span></strong>
                 </div>
                 <div class="artSelect">
                     <label for="seleccion">Seleccionar</label>
@@ -121,13 +127,13 @@
 
             <div class="artContainer col-6 col-md-4 col-lg-3">
                 <div class="artImage">
-                    <img src="../image/ropa/nene/remeracorta03.jpeg" alt="remera">
+                    <img src="image/ropa/nene/remeracorta03.jpeg" alt="remera">
                 </div>
                 <div class="artComent">
-                    <p>Descripcion del articulo</p>
+                    <p class="descripcion">Descripcion del articulo</p>
                 </div>
                 <div class="artPrice">
-                    <strong>$<span id="precio">499</span></strong>
+                    <strong>$<span class="precio">499</span></strong>
                 </div>
                 <div class="artSelect">
                     <label for="seleccion">Seleccionar</label>
@@ -137,13 +143,13 @@
 
             <div class="artContainer col-6 col-md-4 col-lg-3">
                 <div class="artImage">
-                    <img src="../image/ropa/nene/remeracorta04.jpeg" alt="remera">
+                    <img src="image/ropa/nene/remeracorta04.jpeg" alt="remera">
                 </div>
                 <div class="artComent">
-                    <p>Descripcion del articulo</p>
+                    <p class="descripcion">Descripcion del articulo</p>
                 </div>
                 <div class="artPrice">
-                    <strong>$<span id="precio">499</span></strong>
+                    <strong>$<span class="precio">499</span></strong>
                 </div>
                 <div class="artSelect">
                     <label for="seleccion">Seleccionar</label>
@@ -153,13 +159,13 @@
 
             <div class="artContainer col-6 col-md-4 col-lg-3">
                 <div class="artImage">
-                    <img src="../image/ropa/nene/remeracorta05.jpeg" alt="remera">
+                    <img src="image/ropa/nene/remeracorta05.jpeg" alt="remera">
                 </div>
                 <div class="artComent">
-                    <p>Descripcion del articulo</p>
+                    <p class="descripcion">Descripcion del articulo</p>
                 </div>
                 <div class="artPrice">
-                    <strong>$<span>599</span></strong>
+                    <strong>$<span class="precio">599</span></strong>
                 </div>
                 <div class="artSelect">
                     <label for="seleccion">Seleccionar</label>
@@ -170,13 +176,13 @@
             <div class="artContainer col-6 col-md-4 col-lg-3">
                 
                 <div class="artImage">
-                    <img src="../image/ropa/nene/remeralarga01.jpeg" alt="remera">
+                    <img src="image/ropa/nene/remeralarga01.jpeg" alt="remera">
                 </div>
                 <div class="artComent">
-                    <p>Descripcion del articulo</p>
+                    <p class="descripcion">Descripcion del articulo</p>
                 </div>
                 <div class="artPrice">
-                    <strong>$<span id="precio">499</span></strong>
+                    <strong>$<span class="precio">499</span></strong>
                 </div>
                 <div class="artSelect">
                     <label for="seleccion">Seleccionar</label>
@@ -186,13 +192,13 @@
 
             <div class="artContainer col-6 col-md-4 col-lg-3">                    
                 <div class="artImage">
-                    <img src="../image/ropa/nene/buzo02.jpeg" alt="buzo">
+                    <img src="image/ropa/nene/buzo02.jpeg" alt="buzo">
                 </div>
                 <div class="artComent">
-                    <p>Descripcion del articulo</p>
+                    <p class="descripcion">Descripcion del articulo</p>
                 </div>
                 <div class="artPrice">
-                    <strong>$<span id="precio">499</span></strong>
+                    <strong>$<span class="precio">499</span></strong>
                 </div>
                 <div class="artSelect">
                     <label for="seleccion">Seleccionar</label>
@@ -202,13 +208,13 @@
 
             <div class="artContainer col-6 col-md-4 col-lg-3">
                 <div class="artImage">
-                    <img src="../image/ropa/nene/buzo05.jpeg" alt="buzo">
+                    <img src="image/ropa/nene/buzo05.jpeg" alt="buzo">
                 </div>
                 <div class="artComent">
-                    <p>Descripcion del articulo</p>
+                    <p class="descripcion">Descripcion del articulo</p>
                 </div>
                 <div class="artPrice">
-                    <strong>$<span id="precio">499</span></strong>
+                    <strong>$<span class="precio">499</span></strong>
                 </div>
                 <div class="artSelect">
                     <label for="seleccion">Seleccionar</label>
@@ -218,13 +224,13 @@
 
             <div class="artContainer col-6 col-md-4 col-lg-3">
                 <div class="artImage">
-                    <img src="../image/ropa/nene/pantalon01.jpeg" alt="pantalon">
+                    <img src="image/ropa/nene/pantalon01.jpeg" alt="pantalon">
                 </div>
                 <div class="artComent">
-                    <p>Descripcion del articulo</p>
+                    <p class="descripcion">Descripcion del articulo</p>
                 </div>
                 <div class="artPrice">
-                    <strong>$<span id="precio">499</span></strong>
+                    <strong>$<span class="precio">499</span></strong>
                 </div>
                 <div class="artSelect">
                     <label for="seleccion">Seleccionar</label>
@@ -234,13 +240,13 @@
 
             <div class="artContainer col-6 col-md-4 col-lg-3">
                 <div class="artImage">
-                    <img src="../image/ropa/nene/pantalon02.jpeg" alt="pantalon">
+                    <img src="image/ropa/nene/pantalon02.jpeg" alt="pantalon">
                 </div>
                 <div class="artComent">
-                    <p>Descripcion del articulo</p>
+                    <p class="descripcion">Descripcion del articulo</p>
                 </div>
                 <div class="artPrice">
-                    <strong>$<span id="precio">499</span></strong>
+                    <strong>$<span class="precio">499</span></strong>
                 </div>
                 <div class="artSelect">
                     <label for="seleccion">Seleccionar</label>
@@ -252,6 +258,7 @@
     <footer>
 
     </footer>
+    <script src="js/dom.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
 </body>
 </html>
