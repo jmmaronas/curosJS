@@ -28,7 +28,7 @@ function agregarProducto(){
 var array=[];
 var nuevoPrdocto;
 for(i=0; i < precio.length; i++){
-    array.push(nuevoPrdocto = new Producto("0", producto[i],precio[i].innerText));
+    array.push(nuevoProducto = new Producto("0", producto[i],precio[i].innerText));
 }
-console.log(nuevoPrdocto);
+console.log(nuevoProducto);
 console.log(array);
