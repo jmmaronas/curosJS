@@ -117,7 +117,7 @@ var arrayArtBebes = [
     {
         id : 0,
         nombre : "bermuda",
-        img :  "../image/ropa/nene/bermuda04.jpeg",
+        img :  "../image/ropa/bebe/valuk kids logo 2.png",
         precio : 499
     }
 ];

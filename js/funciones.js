@@ -25,6 +25,10 @@ var arrayCompra =[];
 function cargarCarrito(id, arrayArt){
     var compra = arrayArt.filter(art => art.id == id);
     var artSeleccion = 0;
+    var almacen = JSON.parse(localStorage.getItem("carr"));
+    if(almacen){
+        arrayCompra=JSON.parse(localStorage.getItem("carr"));
+        }
     arrayCompra.push(artSeleccion = new Carrito(compra[0].id, compra[0].nombre, compra[0].img, compra[0].precio));
     localStorage.setItem('carr', JSON.stringify(arrayCompra));
 }
@@ -33,7 +37,7 @@ function mostrarCarrito(arrayObjetos){
     var carrito = document.getElementById("carrito");
     arrayObjetos.forEach(e => {
         carrito.innerHTML += `
-        <div class="artContainer col-6 col-md-4 col-lg-3">
+        ´<div class="artContainer col-6 col-md-4 col-lg-3">
             <div class="artImage">
                 <img src="${e.img}" alt="vermuda">
             </div>
@@ -46,5 +50,9 @@ function mostrarCarrito(arrayObjetos){
         
         </div> `
     });
-    
+}
+
+function vaciarCarrito(){
+    localStorage.clear();
+    location.reload();
 }
