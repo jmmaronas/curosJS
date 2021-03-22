@@ -1,0 +1,151 @@
+*{
+    margin: 0;
+    padding: 0;
+    margin-left: 5px;
+}
+body{
+    
+    display: flex;
+    flex-direction: column;
+    
+}
+header{
+    text-align: center;
+}
+header img{
+    width: auto;
+    height: 10em;
+}
+.menuHeader {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    list-style: none;
+}
+
+.menuHeader a{
+    text-decoration: none;
+    margin: 0 10px;
+    font-size: 2rem;
+    color: rgb(54, 13, 235);
+}
+.menuHeader  a:hover{
+    border-bottom: 2px solid rgb(54, 13, 235);
+
+}
+
+
+.carousel-item img{
+        margin: auto;
+        height: 30rem;
+}
+
+.carousel{
+    background-color: rgba(243, 191, 230,0.3);
+}
+
+
+.container{
+    display: flex;
+    justify-content: space-around;
+    align-items: baseline;
+    align-content: space-around;
+    
+} 
+.artContainer{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    margin: 2rem 0;
+}
+
+.artImage{
+    /* background-color: rgb(150, 143, 135); */
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.artImage img{   
+    border-radius: 5px; 
+    width: 18rem;
+    height: 18rem;
+}
+
+.artPrice strong{
+    font-size: 3rem;
+}
+
+.artSelect{
+    font-size: 1.3rem;
+}
+
+.artComent{
+    font-size: 1.8rem;
+}
+
+.button{
+    background-color: blue;
+    color: cornsilk;
+    border: solid darkblue 2px;
+    border-radius: 5px;
+    padding: 5px 15px;
+}
+
+.button:hover{
+    background-color: darkblue;
+    border: solid black 2px;
+}
+
+/*DATOS PERSONALES*/
+
+.datosPersonales_form{
+    font-size: 1.5rem;
+    padding: 20px;
+    border: solid 2px black;
+    width: 400px;
+    height: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: initial;
+}
+
+.boxMainForm{
+    font-size: 1.5rem;
+}
+@media only screen and (min-width: 768px) {
+
+}
+
+@media only screen and (max-width: 600px) {
+    *{
+        font-size: 85%;
+    }
+    .artImage img{
+        width: 11rem;
+        height: auto;
+    }
+    /* .artImage{
+        width: 10rem;
+        height: 10rem;
+    }*/
+    .carousel-item img{
+        margin: auto;
+        height: 10rem;
+    }
+
+    .menuHeader{
+        justify-content: flex-start;
+    }
+    .menuHeader a{
+        font-size: 1rem;
+        border-bottom: 0.1rem solid black;
+    }
+    .navbar-nav{
+        text-align: left;
+    }
+} 
+

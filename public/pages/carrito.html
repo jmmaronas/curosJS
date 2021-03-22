@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <link rel="stylesheet" href="../css/style.css">
+    <title>Carrito de Compras</title>
+</head>
+<body>
+    <header>
+        <a href="../index.html"><img src="../image/valuk kids logo.png" alt="logo nombre"></a>
+        <nav class="navbar navbar-expand-lg navbar-light">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="menuHeader collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav">            
+                    <a class="navlink" href="ropabebes.html">Ropa Bebes</a></li>
+                    <a class="navlink" href="ropanenes.html">Ropa Nenes</a></li>
+                    <a class="navlink" href="ropanenas.html">Ropa Nenas</a></li>
+                    <a class="navlink" href="contacto.html">Contacto</a></li>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <section>
+            <div id="carrito" class="row col-12">
+                <button class="button" onclick="vaciarCarrito()">Vaciar Carrito</button>
+                <!-- <button class="button" onclick="mostrarCarrito(JSON.parse(localStorage.getItem(`carr`)))">Mostar Carrito</button> -->
+            </div>
+        </section>
+        <section>
+            <h2>Formas de pado</h2>
+            <form action="">
+                <input type="radio">
+                <label for="efectivo">Efectivo</label>
+                <input type="radio">
+                <label for="efectivo">Efectivo</label>
+                <input type="submit" value="Pagar">
+            </form>
+        </section>
+    </main>
+    
+    <script src="../js/class.js"></script>
+    <script src="../js/baseArticulos.js"></script>
+    <script src="../js/funciones.js"></script>
+    <script src="../js/domCarrito.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+</body>
+</html>

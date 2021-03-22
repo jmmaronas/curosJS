@@ -1,0 +1,1 @@
+mostrarCarrito(JSON.parse(localStorage.getItem("carr")));
