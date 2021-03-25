@@ -1,9 +1,9 @@
 function cargarArt(p, s){
-    var container = document.getElementById("artCont");
+    var html = document.getElementById("artCont");
     
     for(i=0; i< p.length;i++){
     
-    container.innerHTML += 
+    html.innerHTML += 
     `<div class="artContainer col-6 col-md-4 col-lg-3">
         <div class="artImage">
             <img src="${p[i].img}" alt="vermuda">
@@ -15,17 +15,13 @@ function cargarArt(p, s){
             <strong>$<span class="precio">${p[i].precio}</span></strong>
         </div>
         <div class="artSelect">
-            <input class="button" type="button" value="Agregar" onclick="cargarCarrito(${p[i].id},${s})">
+            <input class="button" type="button" value="Agregar" onclick="cargarCarrito(${(p[i].id)},${s})">
         </div>
     </div> `
     }
 }
 
-// class Carrito{
-//     constructor(){
-//         this.arrayCompra = [];
-//         this.total = 0;
-//     }
+
     var arrayCompra =[]; 
     function cargarCarrito(id, arrayArt){
         var compra = arrayArt.filter(art => art.id == id);
@@ -77,8 +73,10 @@ function cargarArt(p, s){
 
     function quitarArticulo(id){
         arrayC=JSON.parse(localStorage.getItem("carr"));
-        arrayC.splice(arrayC.indexOf(id),1);
+        var elem = arrayC.filter(art => art.id === id);
+        var elemen = elem[0]; 
+        var bus=arrayC.indexOf(elemen);
+        arrayC.splice(bus,1);
         localStorage.setItem('carr', JSON.stringify(arrayC));
         location.reload();
     }
-//}
