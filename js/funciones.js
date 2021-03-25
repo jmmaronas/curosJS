@@ -5,18 +5,18 @@ function cargarArt(p, s){
     
     container.innerHTML += 
     `<div class="artContainer col-6 col-md-4 col-lg-3">
-    <div class="artImage">
-        <img src="${p[i].img}" alt="vermuda">
-    </div>
-    <div class="artComent">
-        <p class="descripcion">${p[i].nombre}</p>
-    </div>
-    <div class="artPrice">
-        <strong>$<span class="precio">${p[i].precio}</span></strong>
-    </div>
-    <div class="artSelect">
-        <input class="button" type="button" value="Agregar" onclick="cargarCarrito(${p[i].id},${s})">
-    </div>
+        <div class="artImage">
+            <img src="${p[i].img}" alt="vermuda">
+        </div>
+        <div class="artComent">
+            <p class="descripcion">${p[i].nombre}</p>
+        </div>
+        <div class="artPrice">
+            <strong>$<span class="precio">${p[i].precio}</span></strong>
+        </div>
+        <div class="artSelect">
+            <input class="button" type="button" value="Agregar" onclick="cargarCarrito(${p[i].id},${s})">
+        </div>
     </div> `
     }
 }
@@ -53,7 +53,9 @@ function cargarArt(p, s){
                 <div class="artPrice">
                     <strong>$<span class="precio">${e.precio}</span></strong>
                 </div>
-            
+                <div class="artSelect">
+                    <input class="button" type="button" value="Quitar" onclick="quitarArticulo(${e.id})">
+                </div>
             </div> `
         });
         
@@ -71,5 +73,12 @@ function cargarArt(p, s){
             total += e.precio;
         })
         totales.innerHTML += total;
+    }
+
+    function quitarArticulo(id){
+        arrayC=JSON.parse(localStorage.getItem("carr"));
+        arrayC.splice(arrayC.indexOf(id),1);
+        localStorage.setItem('carr', JSON.stringify(arrayC));
+        location.reload();
     }
 //}
