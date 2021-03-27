@@ -1,9 +1,10 @@
 function cargarArt(p, s){
-    var html = document.getElementById("artCont");
+    //var html = document.getElementById("artCont");
     
     for(i=0; i< p.length;i++){
     
-    html.innerHTML += 
+    //html.innerHTML += 
+    $("#artCont").append(
     `<div class="artContainer col-6 col-md-4 col-lg-3">
         <div class="artImage">
             <img src="${p[i].img}" alt="vermuda">
@@ -18,7 +19,7 @@ function cargarArt(p, s){
             <input class="button" type="button" value="Agregar" onclick="cargarCarrito(${(p[i].id)},${s})">
         </div>
     </div> `
-    }
+    )}
 }
 
 
@@ -36,9 +37,10 @@ function cargarArt(p, s){
     }
 
     function mostrarCarrito(arrayObjetos){
-        var carrito = document.getElementById("carrito");
+        //var carrito = document.getElementById("carrito");
         arrayObjetos.forEach(e => {
-            carrito.innerHTML += `
+            //carrito.innerHTML += `
+            $("#carrito").append(`
             <div class="artContainer col-6 col-md-4 col-lg-3">
                 <div class="artImage">
                     <img src="${e.img}" alt="vermuda">
@@ -52,7 +54,7 @@ function cargarArt(p, s){
                 <div class="artSelect">
                     <input class="button" type="button" value="Quitar" onclick="quitarArticulo(${e.id})">
                 </div>
-            </div> `
+            </div> `)
         });
         
     }
@@ -80,3 +82,30 @@ function cargarArt(p, s){
         localStorage.setItem('carr', JSON.stringify(arrayC));
         location.reload();
     }
+
+    $("#pedido").click(function(){
+        $("#pedido").append(`
+        <form action="correo.php" method="POST" name="Formulario Consulta">
+            <fieldset>
+                <legend class="encabezado">Fomulario</legend>
+                    <div class="form-group">                
+                        <label for="nombre">Nombres:</label>
+                        <input class="form-control input" type="text" value="" name="nombre" placeholder="Juan..." id="nombre">
+                    </div>
+                    <div class="form-group">
+                        <label for="apellido">Apellidos:</label>
+                        <input class="form-control input" type="text" name="apellido" placeholder="Matinez.." id="apellido">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email:</label>
+                        <input class="form-control input" type="email" name="email" placeholder="tu_mail@algo.com" id="email">
+                    </div>
+                    <div class="form-group">
+                        <label for="telefono">Telefono:</label>
+                        <input class="form-control input" type="number" name="telefono" placeholder="011-132465.." id="telefono">
+                    </div>
+                    <input class="btn btn-primary button" type="submit" value="Enviar" name="enviar">
+                    <input class="btn btn-primary button" type="reset" value="Restablecer">
+            </fieldset>
+        </form>`)});
+    
