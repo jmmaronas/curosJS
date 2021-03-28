@@ -27,9 +27,9 @@ function cargarArt(p, s){
     function cargarCarrito(id, arrayArt){
         var compra = arrayArt.filter(art => art.id == id);
         var artSeleccion = 0;
-        var almacen = JSON.parse(localStorage.getItem("carr"));
-        if(almacen){
-            arrayCompra=JSON.parse(localStorage.getItem("carr"));
+        //var almacen = JSON.parse(localStorage.getItem("carr"));
+        if(localStorage.getItem("carr")){
+             arrayCompra=JSON.parse(localStorage.getItem("carr"));
             }    
         arrayCompra.push(artSeleccion = new Carrito(compra[0].id, compra[0].nombre, compra[0].img, compra[0].precio));
         localStorage.setItem('carr', JSON.stringify(arrayCompra));
@@ -38,6 +38,7 @@ function cargarArt(p, s){
 
     function mostrarCarrito(arrayObjetos){
         //var carrito = document.getElementById("carrito");
+        var compra = arrayObjetos;
         arrayObjetos.forEach(e => {
             //carrito.innerHTML += `
             $("#carrito").append(`
@@ -64,9 +65,10 @@ function cargarArt(p, s){
         location.reload();
     }
 
-    var total=0;
+    
     function sumarProductos(objetosCarrito){
-        var totales = document.getElementById("total");
+        let total=0;
+        let totales = document.getElementById("total");
         objetosCarrito.forEach(e => {
             total += e.precio;
         })
@@ -75,16 +77,16 @@ function cargarArt(p, s){
 
     function quitarArticulo(id){
         arrayC=JSON.parse(localStorage.getItem("carr"));
-        var elem = arrayC.filter(art => art.id === id);
-        var elemen = elem[0]; 
-        var bus=arrayC.indexOf(elemen);
+        let elem = arrayC.filter(art => art.id === id);
+        let elemen = elem[0]; 
+        let bus=arrayC.indexOf(elemen);
         arrayC.splice(bus,1);
         localStorage.setItem('carr', JSON.stringify(arrayC));
         location.reload();
     }
 
     $("#pedido").click(function(){
-        $("#pedido").append(`
+        $("#formPedido").html(`
         <form action="correo.php" method="POST" name="Formulario Consulta">
             <fieldset>
                 <legend class="encabezado">Fomulario</legend>
