@@ -87,25 +87,25 @@ var arrayArtNenes = [
 
 var arrayArtNenas = [
     {
-        id : 0,
+        id : 100,
         nombre : "bermuda",
         img :  "../image/ropa/nena/bermuda03.jpeg",
         precio : 499
     },
     {
-        id : 1,
+        id : 101,
         nombre : "bermuda",
         img :  "../image/ropa/nena/bermuda04.jpeg",
         precio : 499
     },
     {
-        id : 2,
+        id : 102,
         nombre : "bermuda",
         img :  "../image/ropa/nena/buzo03.jpeg",
         precio : 499
     },
     {
-        id : 3,
+        id : 103,
         nombre : "bermuda",
         img :  "../image/ropa/nena/pantalon04.jpeg",
         precio : 499
@@ -115,7 +115,7 @@ var arrayArtNenas = [
 
 var arrayArtBebes = [
     {
-        id : 0,
+        id : 200,
         nombre : "bermuda",
         img :  "../image/ropa/bebe/valuk kids logo 2.png",
         precio : 499
