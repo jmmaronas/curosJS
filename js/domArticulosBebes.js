@@ -1,1 +1,1 @@
-cargarArt(arrayArtBebes);
+cargarArt("arrayArtBebes");

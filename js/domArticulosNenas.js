@@ -1,1 +1,1 @@
-cargarArt(arrayArtNenas, "arrayArtNenas");
+cargarArt("arrayArtNenas");

@@ -1,4 +1,6 @@
-var arrayArtNenes = [
+
+
+/*var arrayArtNenes = [
     {
         id : 0,
         nombre : "Bermuda de jean",
@@ -120,5 +122,5 @@ var arrayArtBebes = [
         img :  "../image/ropa/bebe/valuk kids logo 2.png",
         precio : 499
     }
-];
+];*/
 

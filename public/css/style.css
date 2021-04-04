@@ -86,6 +86,12 @@ header img{
     font-size: 1.8rem;
 }
 
+.totalCarrito{
+    font-size: 2rem;
+    background-color: coral;
+
+}
+
 .button{
     background-color: blue;
     color: cornsilk;

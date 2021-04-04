@@ -28,22 +28,35 @@
     <main>
         <section>
             <div id="carrito" class="row col-12">
+                
+            </div>
+            <div class="totalCarrito">
+                <p>Total <span id="total">$</span></p>
+            </div>
+            <div>
                 <button class="button" onclick="vaciarCarrito()">Vaciar Carrito</button>
-                <!-- <button class="button" onclick="mostrarCarrito(JSON.parse(localStorage.getItem(`carr`)))">Mostar Carrito</button> -->
+                <button id="pedido" class="button" >Confirmar Compra</button>
+                <div id="formPedido"></div>
             </div>
         </section>
         <section>
-            <h2>Formas de pado</h2>
+            <h2>Formas de pago</h2>
             <form action="">
                 <input type="radio">
                 <label for="efectivo">Efectivo</label>
                 <input type="radio">
                 <label for="efectivo">Efectivo</label>
                 <input type="submit" value="Pagar">
+                <label for="talle">Talle:</label>
+                <select name="talle" id="">
+                    <option value="S">S</option>
+                    <option value="M">M</option>
+                </select>
             </form>
         </section>
     </main>
     
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
     <script src="../js/class.js"></script>
     <script src="../js/baseArticulos.js"></script>
     <script src="../js/funciones.js"></script>

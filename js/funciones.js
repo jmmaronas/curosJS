@@ -1,63 +1,93 @@
-function cargarArt(p, s){
-    //var html = document.getElementById("artCont");
-    
-    for(i=0; i< p.length;i++){
-    
-    //html.innerHTML += 
-    $("#artCont").append(
-    `<div class="artContainer col-6 col-md-4 col-lg-3">
-        <div class="artImage">
-            <img src="${p[i].img}" alt="vermuda">
-        </div>
-        <div class="artComent">
-            <p class="descripcion">${p[i].nombre}</p>
-        </div>
-        <div class="artPrice">
-            <strong>$<span class="precio">${p[i].precio}</span></strong>
-        </div>
-        <div class="artSelect">
-            <input class="button" type="button" value="Agregar" onclick="cargarCarrito(${(p[i].id)},${s})">
-        </div>
-    </div> `
-    )}
+$(document).ready(()=>$("#logo").slideDown(2000));
+
+function cargarArt(s){
+    $.getJSON("../Json/baseArticulos.json", (resultado, estado) =>{
+        if(estado = "success"){
+            var p = resultado[s];
+            for(i=0; i< p.length;i++){
+                
+            $("#artCont").append(
+            `<div class="artContainer col-6 col-md-4 col-lg-3">
+                <div class="artImage">
+                    <img src="${p[i].img}" alt="vermuda">
+                </div>
+                <div class="artComent">
+                    <p class="descripcion">${p[i].nombre}</p>
+                </div>
+                <div class="artPrice">
+                    <strong>$<span class="precio">${p[i].precio}</span></strong>
+                </div>
+                <div class="artSelect">
+                    <input class="button" type="button" value="Agregar" onclick=cargarCarrito(${p[i].id},"${s}")>
+                </div>
+            </div> `
+            )} 
+        }
+    });
 }
 
 
     var arrayCompra =[]; 
     function cargarCarrito(id, arrayArt){
-        var compra = arrayArt.filter(art => art.id == id);
-        var artSeleccion = 0;
-        var almacen = JSON.parse(localStorage.getItem("carr"));
-        if(almacen){
-            arrayCompra=JSON.parse(localStorage.getItem("carr"));
-            }    
-        arrayCompra.push(artSeleccion = new Carrito(compra[0].id, compra[0].nombre, compra[0].img, compra[0].precio));
-        localStorage.setItem('carr', JSON.stringify(arrayCompra));
-        alert("El producto fue agregado al carrito")
+        
+        $.getJSON("../Json/baseArticulos.json", (resultado, estado) =>{
+            if(estado = "success"){
+                let p = resultado[arrayArt];
+                let compra = p.filter(art => art.id == id);
+                let artSeleccion = 0;
+                let comprobar = JSON.parse(localStorage.getItem("carr"));
+                if(comprobar){
+                     arrayCompra=JSON.parse(localStorage.getItem("carr"));
+                }    
+                arrayCompra.push(artSeleccion = new Carrito(compra[0].id, compra[0].nombre, compra[0].img, compra[0].precio));
+                localStorage.setItem('carr', JSON.stringify(arrayCompra));
+                //alert("El producto fue agregado al carrito");
+                $("#artCont").prepend(`
+                    <div id="modal" width="320" height= "320">
+                        <h2>El producto fue agregado al carrito</h2>
+                    </div>`
+                );
+                
+                var winH = $(window).height();
+                var winW = $(window).width();
+                $("#modal").css({
+                    "background-color": "#d4cece",
+                    "position": "absolute",
+                    "width": "10rem",
+                    "top": winH/2,
+                    "left": winW/2,
+                    "border": "solid 1px #000000"
+                    }).slideUp(6000);
+            }
+        });
     }
 
     function mostrarCarrito(arrayObjetos){
-        //var carrito = document.getElementById("carrito");
-        arrayObjetos.forEach(e => {
-            //carrito.innerHTML += `
-            $("#carrito").append(`
-            <div class="artContainer col-6 col-md-4 col-lg-3">
-                <div class="artImage">
-                    <img src="${e.img}" alt="vermuda">
-                </div>
-                <div class="artComent">
-                    <p class="descripcion">${e.nombre}</p>
-                </div>
-                <div class="artPrice">
-                    <strong>$<span class="precio">${e.precio}</span></strong>
-                </div>
-                <div class="artSelect">
-                    <input class="button" type="button" value="Quitar" onclick="quitarArticulo(${e.id})">
-                </div>
-            </div> `)
-        });
+        let comprobar = JSON.parse(localStorage.getItem("carr"));
         
-    }
+        // if(comprobar === null){
+        
+        // }
+        // else{
+            arrayObjetos.forEach(e => {
+            $("#carrito").append(`
+                <div class="artContainer col-6 col-md-4 col-lg-3">
+                    <div class="artImage">
+                        <img src="${e.img}" alt="vermuda">
+                    </div>
+                    <div class="artComent">
+                        <p class="descripcion">${e.nombre}</p>
+                    </div>
+                    <div class="artPrice">
+                        <strong>$<span class="precio">${e.precio}</span></strong>
+                    </div>
+                    <div class="artSelect">
+                        <input class="button" type="button" value="Quitar" onclick="quitarArticulo(${e.id})">
+                    </div>
+                </div> `);
+            });
+        }
+    
 
     function vaciarCarrito(){
         localStorage.clear();
@@ -66,11 +96,18 @@ function cargarArt(p, s){
 
     var total=0;
     function sumarProductos(objetosCarrito){
-        var totales = document.getElementById("total");
-        objetosCarrito.forEach(e => {
-            total += e.precio;
-        })
-        totales.innerHTML += total;
+        let comprobar = JSON.parse(localStorage.getItem("carr"));
+        
+        if(comprobar === null){
+        
+        }
+        else{
+            var totales = document.getElementById("total");
+            objetosCarrito.forEach(e => {
+                total += e.precio;
+            })
+            totales.innerHTML += total;
+        }
     }
 
     function quitarArticulo(id){
@@ -84,7 +121,7 @@ function cargarArt(p, s){
     }
 
     $("#pedido").click(function(){
-        $("#pedido").append(`
+        $("#formPedido").html(`
         <form action="correo.php" method="POST" name="Formulario Consulta">
             <fieldset>
                 <legend class="encabezado">Fomulario</legend>
@@ -107,5 +144,18 @@ function cargarArt(p, s){
                     <input class="btn btn-primary button" type="submit" value="Enviar" name="enviar">
                     <input class="btn btn-primary button" type="reset" value="Restablecer">
             </fieldset>
-        </form>`)});
+        </form>`);
+        //var parametros = localStorage.getItem("carr");
+        $.ajax({            
+            data:  {"parametros": localStorage.getItem("carr")}, //datos que se envian a traves de ajax
+            url:   '../pages/correo.php', //archivo que recibe la peticion
+            type:  'post', //método de envio
+            beforeSend: function () {
+                    $("#resultado").html("Procesando, espere por favor...");
+            },
+            success:  function (response) { //una vez que el archivo recibe el request lo procesa y lo devuelve
+                    $("#resultado").html(response);
+            }
+    });
+    });
     
